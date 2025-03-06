@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; margin: 0;">
+
+    <h3 id="quote" style="font-size: 1.5rem; color: #333; max-width: 80%; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
+        {{ random_quote }}
+    </h3>
+
+    <button class="refresh" style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; color: white; background: #007BFF; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+        Refresh
+    </button>
+
+</body>
+</html>
+
+
+
+<script>
+    // except is catch
+    // how does random.choice work?
+    const refreshButton = document.getElementsByClassName("refresh")[0];
+
+    async function getData() {
+        const url = "/get-random-quote/";
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+            }
+
+            const json = await response.json();
+            const quoteh3 = document.getElementById("quote");
+            quoteh3.textContent = json.quote;
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+    refreshButton.addEventListener('click', function () {
+        getData();
+    })
+
+</script>
