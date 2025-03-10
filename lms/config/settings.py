@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # Local
     'library',
     'authors',
+    'dtl',
+    'pages',
 ]
 
 MIDDLEWARE = [

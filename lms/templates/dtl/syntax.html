@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTL Syntax</title>
+</head>
+<body>
+    <p>My name is {{ name }}.</p>
+    <p>I am {{ age }} years old.</p>
+    {% if is_happy %}
+        <p>I am happy today.</p>
+    {% else %}
+        <p>I am not happy today.</p>
+    {% endif %}
+
+
+    {% for number in numbers %}
+        <h2>{{ number }}</h2>
+    {% empty %}
+        <p>There are no numbers</p>
+    {% endfor %}
+
+    {% comment %}
+    <p>These are the numbers {{ numbers }}</p>
+    {% endcomment %}
+    
+    <div>
+        Data:
+        <ul>
+            <li>State: {{ data.state }}</li>
+            <li>Gender: {{ data.gender }}</li>
+        </ul>
+    </div>
+</body>
+</html>

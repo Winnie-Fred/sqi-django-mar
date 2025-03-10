@@ -1,0 +1,12 @@
+<header>
+    <nav>
+        <ul>
+            {% comment %} <li><a href="/pages">Home</a></li> {% endcomment %}
+            <li><a href="{% url 'pages:home' %}">Home</a></li>
+            <li><a href="{% url 'pages:about' %}">About</a></li>
+            {% comment %} <li><a href="/pages/about">About</a></li> {% endcomment %}
+            <li><a href="{% url 'pages:contact' %}">Contact</a></li>
+            {% comment %} <li><a href="/pages/contact">Contact</a></li> {% endcomment %}
+        </ul>
+    </nav>
+</header>
