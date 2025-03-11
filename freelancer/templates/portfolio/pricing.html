@@ -1,0 +1,21 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+Pricing
+{% endblock title %}
+
+{% block styles %}
+{% include "partials/services-pricing-styling.html" %}
+{% endblock styles %}
+
+{% block content %}
+<div>
+    {% for service, price in service_vs_price.items %}
+        <p>{{ service }}</p>
+        <div>
+            {{ price }}
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

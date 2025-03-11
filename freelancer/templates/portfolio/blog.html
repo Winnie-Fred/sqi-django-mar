@@ -1,0 +1,62 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+Blog
+{% endblock title %}
+
+{% block styles %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    .blog-container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .post {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    h1 {
+        text-align: center;
+    }
+    .date {
+        color: gray;
+        font-size: 14px;
+    }
+</style>
+{% endblock styles %}
+
+
+{% block content %}
+
+<div class="blog-container">
+    <h1>Developer Blog</h1>
+    
+    <div class="post">
+        <h2>Understanding Async/Await in JavaScript</h2>
+        <p class="date">March 11, 2025</p>
+        <p>Async/Await simplifies working with promises in JavaScript. It makes asynchronous code look and behave more like synchronous code...</p>
+    </div>
+
+    <div class="post">
+        <h2>Top Python Libraries for Machine Learning</h2>
+        <p class="date">March 5, 2025</p>
+        <p>Machine learning has evolved rapidly, and Python offers powerful libraries like TensorFlow, Scikit-Learn, and PyTorch...</p>
+    </div>
+
+    <div class="post">
+        <h2>Getting Started with Django</h2>
+        <p class="date">February 28, 2025</p>
+        <p>Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design...</p>
+    </div>
+</div>
+{% endblock content %}

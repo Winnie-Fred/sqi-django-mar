@@ -1,0 +1,55 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+Case Studies
+{% endblock title %}
+
+
+{% block styles %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    .case-container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .case-study {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    h1 {
+        text-align: center;
+    }
+    .date {
+        color: gray;
+        font-size: 14px;
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="case-container">
+    <h1>Case Studies</h1>
+    
+    <div class="case-study">
+        <h2>Optimizing E-Commerce Performance</h2>
+        <p class="date">January 15, 2025</p>
+        <p>Implemented caching strategies and database optimizations, reducing load times by 40%...</p>
+    </div>
+
+    <div class="case-study">
+        <h2>Automating Data Processing with Python</h2>
+        <p class="date">December 8, 2024</p>
+        <p>Developed a Python script to automate ETL processes, cutting down manual work by 60%...</p>
+    </div>
+</div>
+{% endblock content %}
