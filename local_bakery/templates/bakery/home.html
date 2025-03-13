@@ -1,0 +1,30 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="bakery-container">
+    <div class="bakery-header">
+        Welcome to our bakery
+    </div>
+    <a href="{% url 'bakery:menu' %}" class="bakery-button">Explore our Menu</a>
+</div>
+
+<div class="popup-wrapper">
+    <div>
+        Subscribe to our Newsletter
+    </div>
+    <div>
+        <input type="email">
+    </div>
+    <button>Subscribe</button>
+    <button class="close-popup">Close</button>
+</div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'js/pop-up.js' %}"></script>
+{% endblock scripts %}

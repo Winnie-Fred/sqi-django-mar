@@ -1,0 +1,14 @@
+{% extends "partials/base.html" %}
+
+{% block title %}Menu{% endblock title %}
+
+{% block content %}
+<div class="menu-container">
+    {% for item, price in menu.items %}
+    <div class="menu-item">
+        <div class="menu-name">{{ item }}</div>
+        <p class="menu-price">${{ price|floatformat:2 }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

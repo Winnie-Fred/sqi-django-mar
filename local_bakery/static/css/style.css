@@ -1,0 +1,354 @@
+/* ------------------- Home Page --------------------------------*/
+/* General styles */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Wrapper to push the footer down */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Header Styling */
+.header {
+    background-color: #d2691e;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f4e5;
+    color: #5a3e2b;
+    text-align: center;
+    padding: 50px;
+} */
+
+/* Container */
+.bakery-container {
+    max-width: 500px;
+    margin: 40px auto auto auto;
+    background: #fffaf0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.bakery-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #a0522d;
+}
+
+/* Button */
+.bakery-button {
+    display: inline-block;
+    background-color: #d2691e;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bakery-button:hover {
+    background-color: #b45f06;
+    transform: scale(1.05);
+}
+
+
+/* ------------------- Home Page --------------------------------*/
+/* ------------------- Pop Up --------------------------------*/
+/* Popup Styling */
+.popup-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fffaf0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    display: none; /* Initially hidden */
+}
+
+/* Popup Heading */
+.popup-wrapper div:first-child {
+    font-size: 20px;
+    font-weight: bold;
+    color: #a0522d;
+    margin-bottom: 15px;
+}
+
+/* Email Input */
+.popup-wrapper input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0c9a6;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.popup-wrapper button {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+}
+
+.popup-wrapper button:hover {
+    background-color: #b45f06;
+    transform: scale(1.05);
+}
+
+/* Close Button */
+.close-popup {
+    background-color: #a0522d;
+}
+
+.close-popup:hover {
+    background-color: #813d1c;
+}
+
+/* Show popup when needed */
+.show-popup {
+    display: block;
+}
+
+/* ------------------- Pop Up --------------------------------*/
+
+
+/* ------------------- About Page --------------------------------*/
+/* About Page Styling */
+.about-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fffaf0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #a0522d;
+    margin-bottom: 15px;
+}
+
+.about-text {
+    font-size: 18px;
+    color: #5a3e2b;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* ------------------- About Page --------------------------------*/
+
+
+/* ------------------- Menu Page --------------------------------*/
+/* Menu Page Styling */
+.menu-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fffaf0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e0c9a6;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #a0522d;
+}
+
+.menu-price {
+    font-size: 18px;
+    color: #5a3e2b;
+}
+/* ------------------- Menu Page --------------------------------*/
+
+
+/* ------------------- Contact Page --------------------------------*/
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto auto auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-label {
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-input, .contact-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-button:hover {
+    background: #0056b3;
+}
+
+/* ------------------- Contact Page --------------------------------*/
+
+
+/* ------------------- Header --------------------------------*/
+/* Navbar Styling */
+.navbar {
+    background-color: #a0522d;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Navigation Styling */
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #f4e1c6;
+}
+
+/* Main Content grows to push the footer down */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ffddaa;
+    transform: scale(1.1);
+}
+
+/* ------------------- Header --------------------------------*/
+
+
+/* ------------------- Footer --------------------------------*/
+/* Footer Styling */
+.footer {
+    background-color: #a0522d;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+/* ------------------- Footer --------------------------------*/
+
+
