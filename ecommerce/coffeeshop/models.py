@@ -44,9 +44,9 @@ class Order(models.Model):
         return f"{self.customer}"
     
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.total_order_price = self.total_price()
-        super().save()
+        super().save(*args, **kwargs)
 
 
 class OrderItem(models.Model):

@@ -1,0 +1,15 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+Albums
+{% endblock title %}
+
+{% block content %}
+<div>Albums</div>
+<ul>
+{% for album in albums %}
+    <li><a href="{% url 'music:album_detail' album.id %}">{{ album.title }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

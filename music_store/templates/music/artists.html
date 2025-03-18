@@ -1,0 +1,16 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+Artists
+{% endblock title %}
+
+{% block content %}
+<div>Artists</div>
+<ul>
+{% for artist in artists %}
+    <li><a href="{% url 'music:artist_detail' artist.pk %}">{{ artist.name }}</a></li>
+{% endfor %}
+</ul>
+
+
+{% endblock content %}

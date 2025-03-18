@@ -1,0 +1,16 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+{{ artist.name }}
+{% endblock title %}
+
+{% block content %}
+<div>{{ artist.name }}</div>
+<p>Debut Year: {{ artist.debut_year }}</p>
+
+<div>Albums by {{ artist.name }}</div>
+{% for album in artist.albums.all %}
+    <p><a href="{% url 'music:album_detail' album.id %}">{{ album.title }}</a></p>
+{% endfor %}
+
+{% endblock content %}

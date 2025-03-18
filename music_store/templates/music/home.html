@@ -1,0 +1,11 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+<div>Welcome to the Music Store</div>
+<a href="{% url 'music:artists' %}">Artists</a>
+<a href="{% url 'music:albums' %}">Albums</a>
+{% endblock content %}
