@@ -6,6 +6,14 @@
 
 {% block content %}
 <div>{{ artist.name }}</div>
+
+{% if artist.artist_image %}
+    <img width="100" height="100" src="{{ artist.artist_image.url }}" alt="{{ artist.name }}'s Image">
+{% else %}
+    <p>No image for {{ artist.name }}</p>
+{% endif %}
+
+
 <p>Debut Year: {{ artist.debut_year }}</p>
 
 <div>Albums by {{ artist.name }}</div>
