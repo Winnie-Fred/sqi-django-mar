@@ -53,3 +53,21 @@ def add_book_with_django_form(request):
         "form": form
     }
     return render(request, "library/auto-form-create-book copy.html", context)
+
+
+def add_book_with_django_form_manual_render(request):
+    form = BookForm()
+    all_authors = Author.objects.all()
+
+
+    if request.method == "POST":
+        form = BookForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('library:all_books')
+
+    context = {
+        "form": form,
+        "authors": all_authors,
+    }
+    return render(request, "library/manual-form-plus-django-form.html", context)
