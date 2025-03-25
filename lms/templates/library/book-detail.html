@@ -1,0 +1,24 @@
+
+{% extends "partials/base.html" %}
+
+{% block title %}{{ book.title }}{% endblock title %}
+
+
+{% block body %}
+
+    {% if book.cover_image  %}
+        <img src="{{ book.cover_image.url }}" alt="Cover Image of {{ book.title }}">    
+    {% endif %}
+
+    <h1>{{ book.title }}</h1>
+
+    <h3>{{ book.author.first_name }} {{ book.author.last_name }}</h3>
+    <p>Number of Pages: {{ book.number_of_pages }}</p>
+    <p>Published on: {{ book.published_on }}</p>
+
+    <a href="{% url 'library:update_book_with_model_form' book.pk %}">Edit with ModelForm</a>
+    <a href="{% url 'library:update_book_with_forms_dot_form' book.pk %}">Edit with forms.Form</a>
+
+    <a href="{% url 'library:confirm_delete' book.pk %}">Delete</a>
+
+{% endblock body %}
