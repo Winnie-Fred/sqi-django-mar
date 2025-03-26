@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ note.title }}</title>
+</head>
+<body>
+
+    <div>
+        <h3>{{ note.title }}</h3>
+        <div>{{ note.content }}</div>
+        <p>Category: {{ note.get_category_display }}</p>
+    </div>
+
+    <div>
+        <a href="{% url 'notes:edit_note' note.id %}">Edit</a>
+        <a href="{% url 'notes:confirm_delete' note.id %}">Delete</a>
+    </div>
+
+</body>
+</html>

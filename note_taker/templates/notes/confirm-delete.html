@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm {{ note.title }} delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete your note titled "{{ note.title }}"?</h3>
+    <div>Content:
+        <div>{{ note.content }}</div>
+        <p>{{ note.get_category_display }}</p>
+    </div>
+    <form action="{% url 'notes:delete_note' note.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes I'm sure</button>
+    </form>
+
+    <a href="{% url 'notes:note_detail' note.id %}">No, take me back</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit {{ note.title }}</title>
+</head>
+<body>
+    <h3>Edit {{ note.title }}</h3>
+    <form action="{% url 'notes:edit_note' note.pk %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Edit Note</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+</head>
+<body>
+
+    <a href="{% url 'notes:create_note' %}">Add Note</a>
+
+    <div>
+        <form action="{% url 'notes:fetch_notes' %}" method="GET">
+            <input type="text" name="title">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div>
+        <form action="{% url 'notes:fetch_notes' %}" method="GET">
+             <select name="category">
+            {% for value, label in filter_form.category.field.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+            </select>
+            {% comment %} {{ filter_form.as_p }} {% endcomment %}
+            <button type="submit">Filter</button>
+        </form>
+    </div>
+
+    <div>
+        {% for note in notes %}
+        <p><a href="{% url 'notes:note_detail' note.pk %}">{{ note.title }}</a></p>
+        {% endfor %}
+    </div>
+</body>
+</html>
