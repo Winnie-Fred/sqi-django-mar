@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes</title>
-</head>
-<body>
+{% extends "partials/base.html" %}
+
+{% block title %}
+Notes
+{% endblock title %}
+
+{% block body %}
 
     <a href="{% url 'notes:create_note' %}">Add Note</a>
 
@@ -33,5 +32,4 @@
         <p><a href="{% url 'notes:note_detail' note.pk %}">{{ note.title }}</a></p>
         {% endfor %}
     </div>
-</body>
-</html>
+{% endblock body %}

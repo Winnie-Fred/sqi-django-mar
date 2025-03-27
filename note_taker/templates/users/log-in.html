@@ -1,0 +1,38 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+Log In
+{% endblock title %}
+
+{% block body %}
+
+    <form action="{% url 'users:log_in' %}" method="POST">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <p style="color: red;">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <div>
+            <div>
+                {% for error in form.username.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            <input type="text" name="username">
+        </div>
+
+        <div>
+            <div>
+                {% for error in form.password.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            <input type="password" name="password">
+        </div>
+        <button type="submit">Log In</button>
+    </form>
+    <div>Don't have an account yet? <a href="{% url 'users:sign_up' %}">Sign Up</a></div>
+{% endblock body %}

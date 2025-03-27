@@ -1,0 +1,17 @@
+{% extends "partials/base.html" %}
+
+{% block title %}
+Sign Up
+{% endblock title %}
+
+{% block body %}
+    <form action="{% url 'users:sign_up' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% comment %} {{ form.username }}
+        {{ form.password1 }}
+        {{ form.password2 }} {% endcomment %}
+        <button type="submit">Create Account</button>
+    </form>
+    <div>Already have an account? <a href="{% url 'users:log_in' %}">Log In</a></div>
+{% endblock body %}
