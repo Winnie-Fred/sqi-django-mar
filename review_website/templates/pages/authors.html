@@ -1,0 +1,23 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}All Authors{% endblock title %}
+
+
+{% block content %}
+<div class="author-container">
+    <h2 class="author-heading">Meet Our Authors</h2>
+    <div class="author-list">
+        {% for author in authors %}
+            <div class="author-card">
+                <div class="author-name">{{ author.first_name }} {{ author.last_name }}</div>
+                <div class="author-bio">{{ author.bio }}</div>
+                <div class="author-year">Born: {{ author.year_of_birth }}</div>
+            </div>
+        {% empty %}
+            <p class="author-text-center">No authors available at the moment. Check back later.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

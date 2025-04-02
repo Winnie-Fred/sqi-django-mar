@@ -1,0 +1,565 @@
+/* Universal Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00000038;
+    color: #333;
+}
+
+.content-wrapper {
+    margin-top: 80px;
+}
+/* Universal Styles */
+
+
+
+/* Books */
+.book-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.book-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff7f50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #ff5722;
+}
+
+.book-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.book-text-center {
+    text-align: center;
+}
+
+.book-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.book-books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.book-card {
+    width: 300px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.book-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.book-author {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 5px;
+}
+/* Container styling */
+.book-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Make the whole card clickable */
+.book-card-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Individual book card */
+.book-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Book cover image */
+.book-cover {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Book title with link */
+.book-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.book-title-link {
+    text-decoration: none;
+    color: #ff7f50;
+    transition: color 0.3s ease;
+}
+
+.book-title-link:hover {
+    color: #ff4500;
+}
+
+/* Book author */
+.book-author {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Empty message */
+.book-empty-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    width: 100%;
+}
+
+/* Books */
+
+/* Styles for the all-authors.html page */
+.author-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.author-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.author-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.author-card {
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.author-card:hover {
+    transform: scale(1.05);
+}
+
+.author-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff7f50;
+}
+
+.author-bio {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.author-year {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.author-text-center {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+}
+/* Styles for the all-authors.html page */
+
+
+/* Book detail */
+.book-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: #f5f5f5;
+}
+
+/* Wrapper for layout */
+.book-detail-wrapper {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    gap: 30px;
+}
+
+/* Book Cover */
+.book-detail-cover img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.book-detail-placeholder {
+    width: 250px;
+    height: 350px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #555;
+    border-radius: 8px;
+}
+
+/* Book Info */
+.book-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Book Title */
+.book-detail-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Book Author */
+.book-detail-author {
+    font-size: 1.2rem;
+    color: #ff7f50;
+    margin-bottom: 20px;
+}
+
+/* Book Meta Info */
+.book-detail-meta p {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Back Button */
+.book-detail-back {
+    margin-top: 20px;
+    display: inline-block;
+    color: #ff7f50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.book-detail-back:hover {
+    color: #ff4500;
+}
+
+/* Book detail */
+
+
+/* Authentication */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+ */
+
+.auth-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23252a;
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    /* max-height: 90vh; */
+    height: 500px;
+    /* height: 700px; */
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.borderLine::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.borderLine::after
+{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    
+}
+
+.box form{
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.box form h2{
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.box form .inputBox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+.box form .inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.box form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: #8f8f8f;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span {
+    color: #fff;
+    font-size: 0.75em;
+    transform: translateY((-34px));
+}
+
+.box form .inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i {
+    height: 44px;
+}
+
+.box form .links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box form .links a{
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+
+.box form .links a:hover,
+.box form .links a:nth-child(2){
+    color: #fff;
+}
+
+#submit{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+}
+
+#submit:active{
+    opacity: 0.8;
+}
+/* Authentication */
+
+
+
+/* Error Messages */
+/* Error container */
+.div-error {
+    background: #ffebeb;
+    border-left: 5px solid #ff4d4d;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(255, 0, 0, 0.1);
+}
+
+/* Error text */
+.p-error {
+    color: #d40000;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: left;
+}
+
+/* Animate errors for better visibility */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.div-error {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Error Messages */
