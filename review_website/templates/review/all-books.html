@@ -1,0 +1,26 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}Our Books{% endblock title %}
+
+
+{% block content %}
+<div class="book-container">
+    {% for book in books %}
+        <a href="{% url 'review:book_detail' book.id %}" class="book-card-link">
+            <div class="book-card">
+                {% if book.cover_image %}
+                    <img class="book-cover" src="{{ book.cover_image.url }}" alt="{{ book.title }} Cover Image">
+                {% endif %}
+                <div class="book-title">
+                    <a href="{% url 'review:book_detail' book.id %}" class="book-title-link">{{ book.title }}</a>
+                </div>
+                <div class="book-author">{{ book.author.first_name }} {{ book.author.last_name }}</div>
+            </div>
+        </a>
+    {% empty %}
+        <p class="book-empty-message">No books yet. Check back later.</p>
+    {% endfor %}
+</div>
+{% endblock content %}

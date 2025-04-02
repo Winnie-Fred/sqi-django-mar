@@ -1,0 +1,57 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}Log In{% endblock title %}
+
+
+{% block content %}
+<div class="auth-wrapper">
+
+    <div class="box">
+        <span class="borderLine"></span>
+        <form action="{% url 'users:log_in' %}" method="POST">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="div-error">
+                    {% for error in form.non_field_errors %}
+                        <p class="p-error">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <h2>Log In</h2>
+
+            {% if form.username.errors %}
+                <div class="div-error">
+                    {% for error in form.username.errors %}
+                        <p class="p-error">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="inputBox">
+                <input type="text" name="username" required value="{{ form.username.value|default_if_none:'' }}">
+                <span>Username</span>
+                <i></i>
+            </div>
+            {% if form.password.errors %}
+                <div class="div-error">
+                    {% for error in form.password.errors %}
+                        <p class="p-error">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="inputBox">
+                <input type="password" name="password" required>
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="#">Forgot Password</a>
+                <a href="{% url 'users:sign_up' %}">Sign Up</a>
+            </div>
+            <input type="submit" id="submit" value="Login">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
