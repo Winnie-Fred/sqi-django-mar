@@ -1,0 +1,41 @@
+<form action="{{ url }}" method="POST" class="review-form">
+    {% csrf_token %}
+
+    <!-- Non-Field Errors -->
+    {% if form.non_field_errors %}
+        <div class="review-error-container">
+            {% for error in form.non_field_errors %}
+                <p class="review-error-text">{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Comment Field -->
+    <div class="review-form-group">
+        <label for="review-comment" class="review-label">Your Review:</label>
+        {% if form.comment.errors %}
+            <div class="review-error-container">
+                {% for error in form.comment.errors %}
+                    <p class="review-error-text">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <textarea id="review-comment" name="comment" class="review-textarea" placeholder="Write your review here...">{{ form.comment.value|default_if_none:'' }}</textarea>
+    </div>
+
+    <!-- Rating Field -->
+    <div class="review-form-group">
+        <label for="review-rating" class="review-label">Rating (1-5):</label>
+        {% if form.rating.errors %}
+            <div class="review-error-container">
+                {% for error in form.rating.errors %}
+                    <p class="review-error-text">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <input id="review-rating" type="number" name="rating" min="1" max="5" class="review-input" value="{{ form.rating.value|default_if_none:'' }}" placeholder="Enter a rating from 1 to 5">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn custom-btn custom-border-btn btn-inverted" type="submit">Leave Review</button>
+</form>

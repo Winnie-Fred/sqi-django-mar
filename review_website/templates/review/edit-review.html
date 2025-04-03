@@ -1,0 +1,17 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}Edit {{ book.title }}{% endblock title %}
+
+{% block content %}
+<div class="review-wrapper">
+    <h3 class="reviews-title">Edit Your Review</h3>
+
+    <div class="review-container">
+
+        {% include "partials/review-form.html" with url=url %}
+    </div>
+</div>
+
+{% endblock content %}

@@ -4,9 +4,6 @@
 
 {% block title %}{{ book.title }}{% endblock title %}
 
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/book-detail.css' %}">
-{% endblock extra_css %}
 
 {% block content %}
 <div class="book-detail-container">
@@ -26,7 +23,7 @@
             <p class="book-detail-author">by {{ book.author.first_name }} {{ book.author.last_name }}</p>
 
             <div class="book-detail-meta">
-                <p><strong>Genre:</strong> {{ book.genre }}</p>
+                <p><strong>Genre:</strong> {{ book.get_genre_display }}</p>
                 <p><strong>Publication Date:</strong> {{ book.publication_date }}</p>
                 <p><strong>ISBN:</strong> {{ book.isbn }}</p>
                 <p><strong>Pages:</strong> {{ book.number_of_pages }}</p>
@@ -34,6 +31,44 @@
 
             <a href="{% url 'review:all_books' %}" class="book-detail-back">← Back to All Books</a>
         </div>
+
+
     </div>
 </div>
+
+<div class="review-wrapper">
+    <h3 class="reviews-title">Reviews</h3>
+    <div class="reviews-container">
+        {% for review in book.reviews.all %}
+            <div class="reviews-card">
+                <p class="reviews-comment">"{{ review.comment }}"</p>
+                <div class="reviews-footer">
+                    <p class="reviews-rating">⭐ {{ review.rating }}/5</p>
+                    <p class="reviews-user">By <strong>{{ review.added_by.username }}</strong></p>
+                    <p class="reviews-date">{{ review.added_on }}</p>
+                </div>
+                <div class="reviews-actions">
+                    <button class="reviews-btn reviews-edit {% if request.user != review.added_by %}btn-disabled{% endif %}" onclick="window.location.href='{% url 'review:edit_review' review.id %}'" {% if request.user != review.added_by %}disabled{% endif %}>Edit</button>
+                    <button class="reviews-btn reviews-delete {% if request.user != review.added_by %}btn-disabled{% endif %}" onclick="window.location.href='{% url 'review:confirm_delete_review' review.id %}'" {% if request.user != review.added_by %}disabled{% endif %}>Delete</button>
+                    {% comment %} <a href="{% url 'review:edit_review' review.id %}" class="reviews-btn reviews-edit">Edit</a> {% endcomment %}
+                    {% comment %} <a href="{% url 'review:confirm_delete_review' review.id %}" class="reviews-btn reviews-delete">Delete</a> {% endcomment %}
+                </div>
+            </div>
+        {% empty %}
+            <p class="reviews-no-reviews">No reviews yet. Be the first to leave one!</p>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div class="review-wrapper">
+    <h3 class="reviews-title">Leave Your Review</h3>
+
+    <div class="review-container">
+
+        {% include "partials/review-form.html" with url=url %}
+    </div>
+</div>
+
+
 {% endblock content %}
