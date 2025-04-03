@@ -1,0 +1,26 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}Confirm Review Delete{% endblock title %}
+
+{% block content %}
+
+    <div>Are you sure you want to delete the review below:</div>
+    <div class="reviews-card">
+        <p class="reviews-comment">"{{ review.comment }}"</p>
+        <div class="reviews-footer">
+            <p class="reviews-rating">⭐ {{ review.rating }}/5</p>
+            <p class="reviews-user">By <strong>{{ review.added_by.username }}</strong></p>
+            <p class="reviews-date">{{ review.added_on }}</p>
+        </div>
+        <div class="reviews-actions">
+            <form action="{% url 'review:delete_review' review.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="reviews-btn reviews-delete">Yes I'm sure</button>
+            </form>
+            <a href="{% url 'review:book_detail' review.book.id %}" class="reviews-btn reviews-edit">No, take me back</a>
+        </div>
+    </div>
+    
+{% endblock content %}

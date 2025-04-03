@@ -68,15 +68,15 @@ https://templatemo.com/tm-588-ebook-landing
                                 <a class="nav-link" href="{% url 'pages:authors' %}">Authors</a>
                             </li>
 
-                            <li class="nav-item">
+                            {% comment %} <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_4">Reviews</a>
-                            </li>
+                            </li> {% endcomment %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'review:all_books' %}">Our Books</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_5">Contact</a>
+                                <a class="nav-link click-scroll" href="{% url 'pages:home' %}#section_5">Contact</a>
                             </li>
                         </ul>
 
@@ -84,10 +84,10 @@ https://templatemo.com/tm-588-ebook-landing
                         {% if request.user.is_authenticated %}
                             <form action="{% url 'users:log_out' %}" method="POST">
                                 {% csrf_token %}
-                                <button type="submit">Log Out</button>
+                                <button class="btn custom-btn custom-border-btn btn-inverted" type="submit">Log Out</button>
                             </form>
                         {% else %}
-                            <a href="#" class="btn custom-btn custom-border-btn btn-inverted">
+                            <a href="{% url 'users:log_in' %}" class="btn custom-btn custom-border-btn btn-inverted">
                                 <i class="btn-icon"></i>
                                 <span>Log In</span><!-- duplicated above one for mobile -->
                             </a>
@@ -99,6 +99,17 @@ https://templatemo.com/tm-588-ebook-landing
             </nav>
 
             <div class="content-wrapper">
+                {% if messages %}
+                    <div id="messages-container">
+                        {% for message in messages %}
+                            <div class="message {{ message.tags }}">
+                                {{ message }}
+                                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
             
                 {% block content %}
                 

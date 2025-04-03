@@ -1,8 +1,13 @@
 import os
 
 from django.db import models
+from django.contrib.auth import get_user_model
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 from django.utils.text import slugify
+
+
+User = get_user_model()
 
 # Create your models here.
 class Author(models.Model):
@@ -45,3 +50,14 @@ class Book(models.Model):
 
     def __str__(self):
         return f"{self.title} by {self.author}"
+    
+
+class Review(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="reviews")
+    comment = models.TextField()
+    added_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    added_on = models.DateTimeField(auto_now_add=True)
+    rating = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+
+    def __str__(self):
+        return f"Review by {self.added_by} on {self.book.title}"
